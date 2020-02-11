@@ -1,9 +1,11 @@
-<% if model.errors.any? %>
-  <div id="error_explanation" class="alert alert-warning">
-    <ul class="mb-0">
-      <% model.errors.full_tasks.each do |task| %>
-        <li><%= task %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
