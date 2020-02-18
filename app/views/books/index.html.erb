@@ -1,0 +1,10 @@
+<h1>積読一覧</h1>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= link_to book.id,book %> : <%= book.status %> &gt; <%= book.title %>&gt; <%= book.buy_date %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to '新規積読の投稿', new_book_path %>

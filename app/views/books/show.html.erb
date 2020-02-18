@@ -1,0 +1,9 @@
+<h1>id: <%= @book.id %> の積読詳細ページ</h1>
+
+<p>ステータス: <%= @book.status %></p>
+<p>タイトル：<%= @book.title %></p>
+<p>購入日：<%= @book.buy_date %></p>
+
+<%= link_to '一覧に戻る', books_path %>
+<%= link_to 'この積読を編集する', edit_book_path(@book) %>
+<%= link_to 'この積読を削除する', @book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
